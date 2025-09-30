@@ -1,4 +1,4 @@
-package cns.shared.models;
+package cns.shared.objects;
 
 public class MessagePacket {
 }

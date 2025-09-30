@@ -2,6 +2,7 @@ package cns.client.crypto;
 
 public class MasterKeyData {
     String passwordHash;
+    String publicKeyHash;
     String salt;
     int iterations;
     String privateKeyIv;
@@ -9,8 +10,9 @@ public class MasterKeyData {
     String encryptedPrivateKey;
     String encryptedPublicKey;
 
-    public MasterKeyData(String passwordHash, String salt, int iterations, String privateKeyIv, String publicKeyIv, String encryptedPrivateKey, String encryptedPublicKey) {
+    public MasterKeyData(String passwordHash, String publicKeyHash, String salt, int iterations, String privateKeyIv, String publicKeyIv, String encryptedPrivateKey, String encryptedPublicKey) {
         this.passwordHash = passwordHash;
+        this.publicKeyHash = publicKeyHash;
         this.salt = salt;
         this.iterations = iterations;
         this.privateKeyIv = privateKeyIv;

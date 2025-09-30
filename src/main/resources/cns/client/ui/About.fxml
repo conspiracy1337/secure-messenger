@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" minHeight="400.0" minWidth="450.0" prefHeight="663.0" prefWidth="450.0" spacing="25" styleClass="root" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cns.client.ui.AboutController">
+    <padding>
+        <Insets bottom="30" left="40" right="40" top="30" />
+    </padding>
+
+    <!-- App Icon/Logo -->
+    <VBox alignment="CENTER" spacing="15">
+        <Label styleClass="about-icon" text="🔐">
+            <font>
+                <Font size="64.0" />
+            </font>
+        </Label>
+        <Label styleClass="setup-title" text="Secure Messenger">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+    </VBox>
+
+    <!-- Info Container -->
+    <VBox alignment="CENTER" spacing="20" styleClass="form-container">
+        <padding>
+            <Insets bottom="30" left="30" right="30" top="30" />
+        </padding>
+
+        <!-- Version Info -->
+        <VBox alignment="CENTER" spacing="8">
+            <Label styleClass="field-label" text="Version">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Label>
+            <Label fx:id="versionLabel" styleClass="about-info" text="1.0.0">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Label>
+        </VBox>
+
+        <Separator prefWidth="200.0" />
+
+        <!-- Description -->
+        <VBox alignment="CENTER" spacing="8">
+            <Label alignment="CENTER" styleClass="about-description" text="End-to-end encrypted messaging application" textAlignment="CENTER" wrapText="true">
+                <font>
+                    <Font size="13.0" />
+                </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="about-description" text="Built with security and privacy in mind" textAlignment="CENTER" wrapText="true">
+                <font>
+                    <Font size="13.0" />
+                </font>
+            </Label>
+        </VBox>
+
+        <Separator prefWidth="200.0" />
+
+        <!-- GitHub Link -->
+        <VBox alignment="CENTER" spacing="10">
+            <Label styleClass="field-label" text="Source Code">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Label>
+            <Hyperlink fx:id="githubLink" styleClass="github-link" text="View on GitHub">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Hyperlink>
+        </VBox>
+
+        <!-- Copyright -->
+        <Label styleClass="copyright-text" text="© 2025 Secure Messenger">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+    </VBox>
+
+    <!-- Close Button -->
+    <Button fx:id="closeButton" prefWidth="120.0" styleClass="secondary-button" text="Close">
+        <font>
+            <Font size="13.0" />
+        </font>
+    </Button>
+</VBox>

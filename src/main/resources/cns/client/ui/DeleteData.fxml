@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" minHeight="450.0" minWidth="500.0" prefHeight="714.0" prefWidth="500.0" spacing="25" styleClass="root" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cns.client.ui.DeleteDataController">
+    <padding>
+        <Insets bottom="30" left="40" right="40" top="30" />
+    </padding>
+
+    <!-- Warning Header -->
+    <VBox alignment="CENTER" spacing="15">
+        <Label styleClass="warning-icon" text="⚠">
+            <font>
+                <Font size="56.0" />
+            </font>
+        </Label>
+        <Label styleClass="delete-title" text="Delete All Data">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" styleClass="delete-subtitle" text="This action cannot be undone!" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+    </VBox>
+
+    <!-- Warning Container -->
+    <VBox alignment="CENTER" spacing="20" styleClass="danger-container">
+        <padding>
+            <Insets bottom="25" left="30" right="30" top="25" />
+        </padding>
+
+        <!-- Warning Message -->
+        <VBox alignment="CENTER" spacing="12">
+            <Label alignment="CENTER" styleClass="warning-message" text="Are you sure you want to delete:" textAlignment="CENTER" wrapText="true">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+
+            <VBox alignment="CENTER_LEFT" spacing="8" styleClass="delete-list">
+                <padding>
+                    <Insets bottom="10" left="20" right="20" top="10" />
+                </padding>
+                <Label styleClass="delete-item" text="• All conversation history" />
+                <Label styleClass="delete-item" text="• All contacts" />
+                <Label styleClass="delete-item" text="• Your encryption keys" />
+                <Label styleClass="delete-item" text="• Your master password" />
+            </VBox>
+
+            <Label alignment="CENTER" styleClass="warning-message" text="You will need to set up the application again from scratch." textAlignment="CENTER" wrapText="true">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Label>
+        </VBox>
+
+        <!-- Confirmation Input -->
+        <VBox spacing="10">
+            <Label alignment="CENTER" prefHeight="19.0" prefWidth="380.0" styleClass="confirmation-label" text="Type 'DELETE EVERYTHING' to confirm:" textAlignment="CENTER">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Label>
+            <TextField fx:id="confirmationField" alignment="CENTER" promptText="Type DELETE EVERYTHING here" styleClass="confirmation-field" />
+        </VBox>
+
+        <!-- Status Label -->
+        <Label fx:id="statusLabel" styleClass="error-label" text="" wrapText="true" />
+    </VBox>
+
+    <!-- Action Buttons -->
+    <HBox alignment="CENTER" spacing="15">
+        <Button fx:id="deleteButton" onAction="#deleteAllData" prefHeight="27.0" prefWidth="216.0" styleClass="danger-button" text="Delete Data">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="cancelButton" onAction="#handleClose" prefWidth="130.0" styleClass="secondary-button" text="Cancel">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+    </HBox>
+</VBox>

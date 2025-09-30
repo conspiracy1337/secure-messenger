@@ -68,9 +68,12 @@ public class StorageHandler {
                         + "id integer PRIMARY KEY AUTOINCREMENT NOT NULL,"
                         + "name text NOT NULL,"
                         + "publicKey text,"
-                        + "hashes text,"
-                        + "notes text,"
+                        + "hash text,"
+                        + "contactId text,"
+                        + "picture text,"
                         + "messageCount integer DEFAULT 0,"
+                        + "statusText text,"
+                        + "isOnline boolean,"
                         + "lastOnline text,"
                         + "lastMessage text,"
                         + "isBlocked boolean DEFAULT FALSE,"
@@ -90,7 +93,9 @@ public class StorageHandler {
                         + "isEdited boolean DEFAULT FALSE"
                         + ");";
 
-                String hashHistoryTable = "CREATE TABLE IF NOT EXISTS hashhistory ("
+                String selfTable = "CREATE TABLE IF NOT EXISTS selftable ("
+                        + "status text,"
+                        + "picture text,"
                         + "hash text"
                         + ");";
 
@@ -104,7 +109,7 @@ public class StorageHandler {
                 try (var statement = conn.createStatement()) {
                     statement.execute(contactsTable);
                     statement.execute(messagesTable);
-                    statement.execute(hashHistoryTable);
+                    statement.execute(selfTable);
 
                     for (String index : indexes) {
                         statement.execute(index);

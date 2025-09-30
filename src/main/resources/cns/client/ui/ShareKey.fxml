@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" minHeight="550.0" minWidth="457.0" prefHeight="885.0" prefWidth="487.0" spacing="25" styleClass="root" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cns.client.ui.ShareKeyController">
+    <padding>
+        <Insets bottom="30" left="40" right="40" top="30" />
+    </padding>
+
+    <!-- Header -->
+    <VBox alignment="CENTER" prefHeight="68.0" prefWidth="390.0" spacing="10">
+        <Label styleClass="setup-title" text="Share Your Public Key">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" styleClass="setup-subtitle" text="Share this with contacts so they can add you" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+    </VBox>
+
+    <!-- QR Code Container -->
+    <VBox alignment="CENTER" spacing="15" styleClass="qr-container">
+        <padding>
+            <Insets bottom="20" left="20" right="20" top="20" />
+        </padding>
+
+        <Label styleClass="field-label" text="Scan QR Code">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+
+        <!-- QR Code Pane -->
+        <StackPane fx:id="qrCodePane" maxHeight="400.0" maxWidth="400.0" minHeight="400.0" minWidth="400.0" styleClass="qr-code-pane">
+            <Label styleClass="qr-placeholder" text="QR Code will appear here" />
+        </StackPane>
+
+        <Label styleClass="hint-text" text="Or copy your public key manually below" />
+    </VBox>
+
+    <!-- Public Key Display -->
+    <VBox prefHeight="91.0" prefWidth="390.0" spacing="10" VBox.vgrow="ALWAYS">
+        <Label styleClass="field-label" text="Your Public Key">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+
+        <TextArea fx:id="publicKeyArea" editable="false" prefHeight="67.0" prefRowCount="4" prefWidth="390.0" styleClass="key-display" wrapText="true" />
+    </VBox>
+
+    <!-- Action Buttons -->
+    <HBox alignment="CENTER" spacing="15">
+        <Button fx:id="copyButton" prefWidth="150.0" styleClass="primary-button" text="📋 Copy Key">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="closeButton" prefWidth="150.0" styleClass="secondary-button" text="Close">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+    </HBox>
+
+    <!-- Status Label -->
+    <Label fx:id="statusLabel" alignment="CENTER" styleClass="status-label" text="" />
+</VBox>

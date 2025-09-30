@@ -9,19 +9,20 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.security.NoSuchAlgorithmException;
+import java.util.Objects;
 
-public class SecureMessenger {
-
-
+public class SecureMessenger extends Application {
 
     public static void main(String[] args) {
-        KeyManager keyManager;
-        StorageHandler storage;
+        launch(args);
+    }
+
+    @Override
+    public void init() throws Exception {
         System.out.println("Initializing application...");
 
-        keyManager = new KeyManager();
-        storage = new StorageHandler();
+        KeyManager keyManager = new KeyManager();
+        StorageHandler storage = new StorageHandler();
 
         storage.createDb();
 
@@ -52,4 +53,23 @@ public class SecureMessenger {
         System.out.println("Sender Hash: " + keyManager.getSenderHash());
     }
 
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/cns/client/ui/AppWindow.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root, 1200, 700);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/cns/client/ui/styles.css")).toExternalForm());
+
+        primaryStage.setTitle("Secure Messenger");
+        primaryStage.setScene(scene);
+        primaryStage.setMinWidth(800);
+        primaryStage.setMinHeight(600);
+
+        primaryStage.show();
+    }
+
+    @Override
+    public void stop() throws Exception {
+        System.out.println("Application closing...");
+    }
 }

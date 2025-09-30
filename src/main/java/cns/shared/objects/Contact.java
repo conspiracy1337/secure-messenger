@@ -4,12 +4,16 @@ public class Contact {
     String name;
     String publicKey;
     String publicKeyHash;
-    String notes;
+    String picture;
+    String contactId;
     int messageCount;
+    String status;
     long dateAdded;
     long lastMessage;
     boolean isBlocked;
     boolean isOnline;
+    long lastOnline;
+
 
     public Contact(String name, String publicKey, String publicKeyHash) {
         this.name = name;

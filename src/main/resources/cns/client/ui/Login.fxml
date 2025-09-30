@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" minHeight="400.0" minWidth="450.0" prefHeight="497.0" prefWidth="450.0" spacing="30" styleClass="root" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cns.client.ui.LoginController">
+    <padding>
+        <Insets bottom="40" left="50" right="50" top="40" />
+    </padding>
+
+    <!-- Header -->
+    <VBox alignment="CENTER" spacing="10">
+        <Label styleClass="login-title" text="🔐">
+            <font>
+                <Font size="48.0" />
+            </font>
+        </Label>
+        <Label styleClass="setup-title" text="Secure Messenger">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label styleClass="setup-subtitle" text="Enter your master password to continue">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+    </VBox>
+
+    <!-- Login Form -->
+    <VBox alignment="CENTER" spacing="20" styleClass="form-container" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="30" left="30" right="30" top="30" />
+        </padding>
+
+        <VBox spacing="8">
+            <Label styleClass="field-label" text="Master Password">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Label>
+            <PasswordField fx:id="passwordField" onAction="#handleLogin" promptText="Enter your master password" styleClass="setup-field" />
+        </VBox>
+
+        <!-- Error Label -->
+        <Label fx:id="errorLabel" styleClass="error-label" text="" wrapText="true" />
+
+        <!-- Login Button -->
+        <Button fx:id="loginButton" defaultButton="true" maxWidth="Infinity" onAction="#handleLogin" styleClass="primary-button" text="Login">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+    </VBox>
+
+    <!-- Footer -->
+    <HBox alignment="CENTER" spacing="5">
+        <Label styleClass="footer-text" text="Forgot your password?" />
+        <Hyperlink fx:id="resetLink" styleClass="footer-link" text="Reset Application" />
+    </HBox>
+</VBox>

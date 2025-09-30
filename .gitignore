@@ -1,5 +1,6 @@
 GitManager.ps1
 *.old/
-build/
-.iea/
-.gradle/
+/build/
+/.idea/
+/.gradle/
+/gradle/

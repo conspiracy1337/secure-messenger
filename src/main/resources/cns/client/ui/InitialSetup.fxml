@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" minHeight="500.0" minWidth="500.0" prefHeight="567.0" prefWidth="500.0" spacing="25" styleClass="root" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cns.client.ui.InitialSetupController">
+    <padding>
+        <Insets bottom="40" left="50" right="50" top="40" />
+    </padding>
+
+    <!-- Header -->
+    <VBox alignment="CENTER" spacing="10">
+        <Label styleClass="setup-title" text="Welcome to Secure Messenger">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label styleClass="setup-subtitle" text="Let's set up your secure app" wrapText="true">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+    </VBox>
+
+    <!-- Form Container -->
+    <VBox alignment="CENTER" prefHeight="425.0" prefWidth="400.0" spacing="20" styleClass="form-container" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="30" left="30" right="30" top="30" />
+        </padding>
+
+        <!-- Password Fields -->
+        <VBox spacing="8">
+            <Label styleClass="field-label" text="Master Password">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Label>
+            <PasswordField fx:id="passwordField" promptText="Enter master password" styleClass="setup-field" />
+        </VBox>
+
+        <VBox spacing="8">
+            <Label styleClass="field-label" text="Confirm Password">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Label>
+            <PasswordField fx:id="confirmPasswordField" promptText="Re-enter master password" styleClass="setup-field" />
+        </VBox>
+
+        <!-- Password Strength Indicator -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label fx:id="strengthLabel" styleClass="strength-label" text="Password strength:" />
+            <ProgressBar fx:id="strengthBar" prefWidth="150.0" progress="0.0" styleClass="strength-bar" />
+        </HBox>
+
+        <!-- Warning Message -->
+        <VBox alignment="CENTER" spacing="8" styleClass="warning-box">
+            <padding>
+                <Insets bottom="15" left="15" right="15" top="15" />
+            </padding>
+            <Label style="-fx-font-size: 16px;" text="⚠" />
+            <Label alignment="CENTER" styleClass="warning-text" text="NEVER forget this password!" wrapText="true">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Label>
+            <Label alignment="CENTER" styleClass="warning-subtext" text="It cannot be recovered. Write it down in a safe place." textAlignment="CENTER" wrapText="true">
+                <font>
+                    <Font size="11.0" />
+                </font>
+            </Label>
+        </VBox>
+
+        <!-- Status Label -->
+        <Label fx:id="statusLabel" alignment="CENTER" styleClass="status-label" text="" wrapText="true" />
+    </VBox>
+
+    <!-- Action Buttons -->
+    <HBox alignment="CENTER" spacing="15">
+        <Button fx:id="nextButton" disable="true" prefWidth="120.0" styleClass="primary-button" text="Next">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+    </HBox>
+</VBox>
